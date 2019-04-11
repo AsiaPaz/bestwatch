@@ -28,7 +28,6 @@ public class SuggestionAPITest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(content().json("[]"));
     }
-
     @Test
     @DisplayName("Wysłanie i odebranie sugestii")
     void test02() throws Exception {
@@ -38,4 +37,18 @@ public class SuggestionAPITest {
         mockMvc.perform(get(API_BESTWATCH_PATH)).andExpect(jsonPath("$[0].movie", is("title")))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    @DisplayName("Wysłanie i odebranie sugestii +link+autor")
+    void test03() throws Exception {
+        String jsonPost = "{\"movie\":\"title\",\"link\":\"link\",\"author\":\"Autor\"}";
+
+        mockMvc.perform(post(API_BESTWATCH_PATH).content(jsonPost).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+        mockMvc.perform(get(API_BESTWATCH_PATH)).andExpect(jsonPath("$[0].movie", is("title")))
+                .andExpect(jsonPath("$[0].link", is("link")))
+                .andExpect(jsonPath("$[0].author", is("Autor")))
+                .andExpect(status().isOk());
+    }
+
 }

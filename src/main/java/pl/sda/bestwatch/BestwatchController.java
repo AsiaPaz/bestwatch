@@ -22,6 +22,7 @@ public class BestwatchController {
 
     @PostMapping
     public void add(@RequestBody Suggestion suggestion) {
+
         this.suggestion = suggestion;
     }
 
