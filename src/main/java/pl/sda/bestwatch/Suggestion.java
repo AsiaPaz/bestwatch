@@ -3,10 +3,29 @@ package pl.sda.bestwatch;
 import java.util.ArrayList;
 
 public class Suggestion {
+    private int id;
     private String movie;
     private String link;
     private String author;
-    private ArrayList<String> authors;
+   // private ArrayList<String> authors;
+
+    public int getId() {
+        return id;
+    }
+
+    public Suggestion() {
+    }
+
+    public Suggestion(int id, String movie, String link, String author) {
+        this.id = id;
+        this.movie = movie;
+        this.link = link;
+        this.author = author;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getMovie() {
         return movie;
@@ -21,18 +40,18 @@ public class Suggestion {
         return link;
     }
 
-    public ArrayList<String> getAuthors() {
+ /*   public ArrayList<String> getAuthors() {
         return authors;
     }
-
+*/
     public void setLink(String link) {
         this.link = link;
     }
 
-    public void setAuthors(ArrayList<String> authors) {
+ /*   public void setAuthors(ArrayList<String> authors) {
         this.authors = authors;
     }
-
+*/
     public String getAuthor() {
         return author;
     }
