@@ -51,12 +51,14 @@ public class BestwatchController {
     @PatchMapping("/{id}")
     public void updateSuggestion(@PathVariable int id, @RequestBody Suggestion suggestionPatch){
         Optional<Suggestion> suggestionToUpdate = suggestions.stream().filter(element ->element.getId()==id).findFirst();
+
         suggestionToUpdate.ifPresent(suggestion->{
             String moviePatch = suggestionPatch.getMovie();
             String linkPatch = suggestionPatch.getLink();
             String authorPatch = suggestionPatch.getAuthor();
-            if (!moviePatch.isEmpty()){
+            if (moviePatch!= null){
                suggestion.setMovie(moviePatch);
+
             }
             if (!linkPatch.isEmpty()){
                 suggestion.setLink(linkPatch);
