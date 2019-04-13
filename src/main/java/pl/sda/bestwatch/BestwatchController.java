@@ -15,13 +15,11 @@ public class BestwatchController {
     private ArrayList<Suggestion> suggestions;
 
     public BestwatchController(){
-        suggestions = new ArrayList<Suggestion>();
-       // suggestion = new Suggestion(1,"AAA","link_1","autor1");
-     ///   suggestions.add(suggestion);
+     /*   suggestions = new ArrayList<Suggestion>();
         suggestions.add(new Suggestion(1,"AAA","link_1","autor1"));
         suggestions.add(new Suggestion(2,"BBB","link_2","autor2"));
         suggestions.add(new Suggestion(3,"CCC","link_3","autor3"));
-
+*/
 
     }
 
